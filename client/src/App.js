@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import Login from './Login';
+import Login from './components/Login';
 import { StyledApp } from './styles/StyledApp';
-import Register from './Register';
+import Register from './components/Register';
 
 
 function App() {

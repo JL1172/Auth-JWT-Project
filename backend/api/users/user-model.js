@@ -4,7 +4,8 @@ module.exports = {
     findAll,
     findByFilter,
     findById,
-    add
+    add,
+    findRoles
 }
 
 async function findAll() {
@@ -30,6 +31,9 @@ async function findById(id) {
     return result; 
 }
 
+async function findRoles() {
+    return await db("roles");
+}
 
 async function add(newUser) {
     const {user_username,user_password} = newUser; 

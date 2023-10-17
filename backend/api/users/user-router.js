@@ -13,6 +13,12 @@ router.get("/", restrict, only("admin"), async (req, res, next) => {
     } catch (err) { next(err) }
 })
 
+router.get("/roles",async(req,res,next)=> {
+    try {
+        const result = await UserData.findRoles();
+        res.status(200).json(result); 
+    } catch (err) {next(err)}
+})
 
 router.post("/user", restrict, onlyUser, checkUsernameExists, async (req, res, next) => {
     try {

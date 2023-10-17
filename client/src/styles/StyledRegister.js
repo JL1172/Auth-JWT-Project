@@ -76,7 +76,7 @@ const fallingDrop = keyframes`
 `
 
 
-export const StyledLogin = styled.div`
+export const StyledRegister = styled.div`
 height : 100vh;
 background-color : black;
 display : flex;
@@ -107,8 +107,8 @@ form {
 }
 #grid1 {
     position : absolute;
-    border : 2px solid lightslategray;  
-    box-shadow : 0 0 2em lightslategray;
+    border : 2px solid lightblue;  
+    box-shadow : 0 0 2em lightblue;
     transform-origin : left;
     opacity : 0;
     left : 0;
@@ -118,9 +118,9 @@ form {
 #grid2 {
     position : absolute;
     transform-origin : top;
-    border : 2px solid lightslategray;  
+    border : 2px solid lightblue;  
     opacity : 0;
-    box-shadow : 0 0 2em lightslategray;
+    box-shadow : 0 0 2em lightblue;
     right : 0;
     top : 0;
     animation : ${topToBottom} 1s ease-in-out forwards;
@@ -129,9 +129,9 @@ form {
 #grid3 {
     position : absolute;
     transform-origin : right;
-    border : 2px solid lightslategray;  
+    border : 2px solid lightblue;  
     opacity : 0;
-    box-shadow : 0 0 2em lightslategray;
+    box-shadow : 0 0 2em lightblue;
     bottom : 0;
     right : 0;
     animation : ${bottomToLeft} .5s ease-in-out forwards;
@@ -140,9 +140,9 @@ form {
 #grid4 {
     position : absolute;
     transform-origin : bottom;
-    border : 2px solid lightslategray;  
+    border : 2px solid lightblue;  
     opacity : 0;
-    box-shadow : 0 0 2em lightslategray;
+    box-shadow : 0 0 2em lightblue;
     bottom: 0;
     left : 0;
     animation : ${leftToTop} 1s ease-in-out forwards;
@@ -150,7 +150,7 @@ form {
 }
 
 input {
-    border : 1px solid lightslategray;
+    border : 1px solid lightblue;
     width : 17rem;
     opacity : 0;
 
@@ -189,7 +189,7 @@ input {
     content : "";
     opacity : 0;
     position : absolute;
-    border : 2px solid lightslategray;
+    border : 2px solid lightblue;
     height : 1.5rem;
     transition : .2s ease-in-out;
     transform-origin : left;
@@ -211,10 +211,10 @@ input {
 #sub {
     font-family: 'Montserrat', sans-serif;
     width : 10rem;
-    background-color : lightslategray !important;
+    background-color : lightblue !important;
     color : black;
     transition : .2s ease-in-out;
-    outline : 2px solid lightslategray;
+    outline : 2px solid lightblue;
     &:hover {
         transform : scale(105%);
         transition : .2s ease-in-out;
@@ -231,7 +231,7 @@ input {
     content : "";
     opacity : 0;
     position : absolute;
-    border : 2px solid lightslategray;
+    border : 2px solid lightblue;
     height : 1.5rem;
     transition : .2s ease-in-out;
     transform-origin : left;
@@ -250,7 +250,7 @@ input {
     animation-delay : 2s;
 }
 #header {
-    color : lightslategray;
+    color : lightblue;
     font-family: 'Montserrat', sans-serif;
 }
 
