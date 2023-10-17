@@ -74,6 +74,7 @@ async function checkUsernameExists(req,res,next) {
 }
 
 
+
 async function restrict(req,res,next) {
     try {
         const token = req.headers.authorization;
