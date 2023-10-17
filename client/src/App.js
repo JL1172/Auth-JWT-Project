@@ -88,7 +88,7 @@ function App() {
   return (
     <GlobalProvider.Provider value={{ login, register, changeHandler, inputValues, spinnerOn, initial, logoutOfProfile }}>
       <StyledApp>
-      {initial && <Logout/>}
+      {/* {initial && <Logout/>} */}
         {errorMessage && <Alert style={{ zIndex: "3", position : "fixed", width : "100%" }} severity="error">{errorMessage}<span onClick={closeMessage} id ="close" className="material-symbols-outlined">
           close
         </span></Alert>}
