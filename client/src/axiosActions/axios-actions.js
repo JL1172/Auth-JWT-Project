@@ -12,3 +12,8 @@ export const loginUser = (credentials) => {
 export const registerUser = (credentials) => {
     return axios.post(`${BASE_URL}/auth/register`,credentials)
 }
+
+export const accessUserList = (creds) => {
+    return axios.create({headers : {Authorization : JSON.parse(window.localStorage.getItem("token"))}})
+    .post(`${BASE_URL}/users/user`,creds)
+}
