@@ -280,7 +280,7 @@ input {
     height : 3rem;
     animation : ${fallingDrop} 20s linear infinite;
     
-    top : -12rem;
+    top : -15rem;
 
 }
 
