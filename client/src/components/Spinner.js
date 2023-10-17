@@ -2,7 +2,7 @@ import { MutatingDots } from "react-loader-spinner";
 
 export default function Spinner1() {
     return (
-        <div style={{height : "100vh", display : "flex", justifyContent : "center", alignItems : "center",  backgroundColor : "black"}}>
+        <div style={{height : "100vh", display : "flex", justifyContent : "center", alignItems : "center",  backgroundColor : "black", width : "100%"}}>
             <MutatingDots
                 height="100"
                 width="100"

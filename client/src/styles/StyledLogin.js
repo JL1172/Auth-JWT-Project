@@ -56,7 +56,15 @@ const fadeIn = keyframes`
 
 }
 100% {
-    opacity : 1;
+    opacity  : 100%;
+}
+`
+const fadeIn2 = keyframes`
+0% {
+
+}
+100% {
+    transform : scale(100%); 
 }
 `
 
@@ -75,19 +83,33 @@ const fallingDrop = keyframes`
 }
 `
 
+const gradient = keyframes`
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+`
+
 
 export const StyledLogin = styled.div`
 height : 100vh;
-background-color : black;
+
+background-color : #36454f;
 display : flex;
 justify-content : center;
 align-items : center;
 width : 100%;
+background-image: radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
 
-
+animation : ${gradient} 10s infinite;
 form {
-
-    /* border : 2px solid white; */
+/* 
+    border : 2px solid white; */
     display : flex;
     opacity : 1;
     flex-direction : column; 
@@ -102,13 +124,12 @@ form {
     animation : ${frame} 1s ease-in-out forwards;
     animation-delay : 1.8s;
 
-    background-color : black;
-
+    background-color : transparent;
 }
 #grid1 {
     position : absolute;
-    border : 2px solid lightslategray;  
-    box-shadow : 0 0 2em lightslategray;
+    border : 2px solid white;  
+    box-shadow : 0 0 2em white;
     transform-origin : left;
     opacity : 0;
     left : 0;
@@ -118,9 +139,9 @@ form {
 #grid2 {
     position : absolute;
     transform-origin : top;
-    border : 2px solid lightslategray;  
+    border : 2px solid white;  
     opacity : 0;
-    box-shadow : 0 0 2em lightslategray;
+    box-shadow : 0 0 2em white;
     right : 0;
     top : 0;
     animation : ${topToBottom} 1s ease-in-out forwards;
@@ -129,9 +150,9 @@ form {
 #grid3 {
     position : absolute;
     transform-origin : right;
-    border : 2px solid lightslategray;  
+    border : 2px solid white;  
     opacity : 0;
-    box-shadow : 0 0 2em lightslategray;
+    box-shadow : 0 0 2em white;
     bottom : 0;
     right : 0;
     animation : ${bottomToLeft} .5s ease-in-out forwards;
@@ -140,34 +161,43 @@ form {
 #grid4 {
     position : absolute;
     transform-origin : bottom;
-    border : 2px solid lightslategray;  
+    border : 2px solid white;  
     opacity : 0;
-    box-shadow : 0 0 2em lightslategray;
+    box-shadow : 0 0 2em white;
     bottom: 0;
     left : 0;
     animation : ${leftToTop} 1s ease-in-out forwards;
     animation-delay : 1.5s;
 }
 
-input {
-    border : 1px solid lightslategray;
-    width : 17rem;
-    opacity : 0;
+input[type=text], input[type=password], #in {
 
+    border : none;
+    outline : 2px solid white;
+    width : 17rem;
+    font-family: 'Montserrat', sans-serif;
     z-index : 2;
-    background-color : black;
-    animation : ${fadeIn} 1s ease-in-out forwards;
-    animation-delay : 2.4s;
     height : 2rem;
     color : white;
     padding-left : .3rem; 
+    border-radius : 5px;
+    
+    background-color : black;
+
+    transform : scale(0);
+
+    animation : ${fadeIn2} .5s ease-in-out forwards;
+    animation-delay : 2s;
+    transition : .1s ease-in-out;
+
+    &:hover {
+        outline-color : gray;
+        transition : .2s ease-in-out;
+    }
     &:focus {
         border : none;
-        outline : 2px solid lightgray;
-        opacity : 1; 
-        filter : blur(0); 
-        backdrop-filter : blur(0);
-        transition : .1s ease-in-out;
+        outline-offset : 5px;
+        transition: .1s ease-in-out; ;
     }
 }
 
@@ -187,13 +217,13 @@ input {
 .slider {
     z-index: -1;
     transition : .2s ease-in-out;
-    color : lightslategray;
+    color : white;
 }
 .slider::before {
     content : "";
     opacity : 0;
     position : absolute;
-    border : 2px solid lightslategray;
+    border : 2px solid white;
     height : 1.5rem;
     transition : .2s ease-in-out;
     transform-origin : left;
@@ -212,30 +242,48 @@ input {
    transform : scale(1.1);
    transition : .2s ease-in-out;
 }
+
 #sub {
+    border : none;
+    outline : 2px solid white;
+    outline-offset : 4px;
+    width : 17rem;
     font-family: 'Montserrat', sans-serif;
-    width : 10rem;
-    background-color : lightslategray !important;
+    z-index : 2;
+    height : 2rem;
     color : black;
-    transition : .2s ease-in-out;
-    outline : 2px solid lightslategray;
+    padding-left : .3rem; 
+    border-radius : 5px;
+    
+    background-color : white;
+
+    transform : scale(0%);
+
+    animation : ${fadeIn2} .5s ease-in-out forwards;
+    animation-delay : 2s;
+
+    transition : 50ms ease-in-out; 
     &:hover {
-        transform : scale(105%);
-        transition : .2s ease-in-out;
-    }
+       color : white;
+       background-color : black;
+       transition : .1s ease-in-out; 
+    }    
     &:active {
         transform : scale(110%);
         border : none;
-        outline-offset : 10px;
-        transition : .2s ease-in-out; 
+        outline-offset : 2rem;
+        transition : .1s ease-in-out !important; 
     }
+}
+#text {
+    color : white;
 }
 
 .slider2::before {
     content : "";
     opacity : 0;
     position : absolute;
-    border : 2px solid lightslategray;
+    border : 2px solid white;
     height : 1.5rem;
     transition : .2s ease-in-out;
     transform-origin : left;
@@ -254,16 +302,16 @@ input {
     animation-delay : 2s;
 }
 #header {
-    color : lightslategray;
+    color : white;
     font-family: 'Montserrat', sans-serif;
 }
 
 
 .eyeContainer {
     position : relative;
-    opacity : 0;
-    animation : ${fadeIn} 1s ease-in-out forwards;
-    animation-delay : 2.4s;
+    transform : scale(0);
+    animation : ${fadeIn2} .5s ease-in-out forwards;
+    animation-delay : 2.2s;
     .visible {
         position : absolute;
         right : 2px;

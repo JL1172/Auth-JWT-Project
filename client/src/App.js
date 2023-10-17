@@ -20,7 +20,7 @@ function App() {
   const [spinnerOn, setSpinnerOn] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [initial,setInitial] = useState("J"); 
+  const [initial,setInitial] = useState(""); 
 
   const nav = useNavigate();
 
@@ -76,6 +76,7 @@ function App() {
   }
 
   const logoutOfProfile = (e) => {
+    console.log("hello")
     window.localStorage.clear();
     setSuccessMessage("");
     setErrorMessage("");

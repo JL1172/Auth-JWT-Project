@@ -49,10 +49,10 @@ export default function Register() {
                 <Spinner1 />
                 :
                 <form onSubmit={(e) => advancedReg(e)}>
-                    <Avatar className="others" sx={{ bgcolor: "lightblue" }}></Avatar    >
+                    <Avatar className="others" sx={{ bgcolor: "transparent" }}></Avatar    >
                     <h1 className="others" id="header">Register</h1>
                     <input name="user_username" onChange={(e) => changeHandler(e.target.name, e.target.value)} value={inputValues.user_username} placeholder="username" type="text" />
-                    <input name="role_name" value={inputValues.role_name} onChange={(e) => changeHandler(e.target.name, e.target.value)} list="list" placeholder="role" />
+                    <input id = "in" name="role_name" value={inputValues.role_name} onChange={(e) => changeHandler(e.target.name, e.target.value)} list="list" placeholder="role" />
                     <datalist id="list">
                         {roles.map(n => {
                             return <option key={n.role_id} value={n.role_name} />
@@ -75,7 +75,7 @@ export default function Register() {
                     <div className="inputs">
                         <div className="slider2"> <span onClick={navToRegister} id="text">go to login</span></div></div>
 
-                    {Array(10).fill(0).map((n, i) => {
+                    {/* {Array(10).fill(0).map((n, i) => {
                         return <BsSquare key={i} className={`squares squares${i}`} />
                     })
                     }
@@ -88,7 +88,7 @@ export default function Register() {
                         if (i >= 10) {
                             return <PiDotOutlineLight key={i} className={`squares squares${i}`} />
                         }
-                    })}
+                    })} */}
                 </form>
             }
         </StyledRegister>

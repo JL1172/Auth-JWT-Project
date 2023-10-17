@@ -10,6 +10,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    color : lightblue;
 }
 
 .material-symbols-outlined {
@@ -19,3 +20,4 @@ code {
   'GRAD' 0,
   'opsz' 24
 }
+
