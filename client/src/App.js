@@ -42,7 +42,7 @@ function App() {
         const firstInitial = res.data.message.split(" ");
         const third = firstInitial[2];
         const thirds = third[0].toUpperCase();
-        setInitial(thirds)  
+        window.localStorage.setItem("initial",JSON.stringify(thirds));  
         setSuccessMessage(res.data.message);
         setSpinnerOn(false);
         setInputValues(initialState);
@@ -77,7 +77,6 @@ function App() {
   }
 
   const logoutOfProfile = (e) => {
-    console.log("hello")
     window.localStorage.clear();
     setSuccessMessage("");
     setErrorMessage("");
@@ -89,7 +88,7 @@ function App() {
   return (
     <GlobalProvider.Provider value={{ login, register, changeHandler, inputValues, spinnerOn, initial, logoutOfProfile }}>
       <StyledApp>
-      {<Logout/>}
+      {window.localStorage.getItem("initial") && <Logout/>}
         {errorMessage && <Alert style={{ zIndex: "3", position : "fixed", width : "100%" }} severity="error">{errorMessage}<span onClick={closeMessage} id ="close" className="material-symbols-outlined">
           close
         </span></Alert>}

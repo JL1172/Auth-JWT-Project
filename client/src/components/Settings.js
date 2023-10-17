@@ -48,7 +48,6 @@ export default function Settings() {
             setInfo([res.data])
             setSpinnerOn(false)
         }).catch(err=> {
-            console.error(err)
             setErrorMessage(err.response.data.message)
             setSpinnerOn(false)
         })
