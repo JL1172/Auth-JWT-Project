@@ -10,4 +10,10 @@ export const StyledApp = styled.div`
             transition : .2s ease-in-out;
         }
     }
+    #logout {
+        position : fixed;
+        z-index : 4;
+        right : 1rem;
+        top : 1rem;
+    }
 `

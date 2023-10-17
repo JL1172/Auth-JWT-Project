@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const GlobalProvider = createContext();
+export const GlobalProvider = createContext("");

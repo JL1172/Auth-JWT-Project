@@ -160,11 +160,14 @@ input {
     animation-delay : 2.4s;
     height : 2rem;
     color : white;
-    padding-left : .3rem;
-    transition : .1s ease-in-out; 
+    padding-left : .3rem; 
     &:focus {
-        outline : 1px solid gray;
-        transition : .1s ease-in-out; 
+        border : none;
+        outline : 2px solid lightgray;
+        opacity : 1; 
+        filter : blur(0); 
+        backdrop-filter : blur(0);
+        transition : .1s ease-in-out;
     }
 }
 
@@ -184,6 +187,7 @@ input {
 .slider {
     z-index: -1;
     transition : .2s ease-in-out;
+    color : lightslategray;
 }
 .slider::before {
     content : "";

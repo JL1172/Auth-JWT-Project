@@ -184,6 +184,7 @@ input {
 .slider {
     z-index: -1;
     transition : .2s ease-in-out;
+
 }
 .slider::before {
     content : "";
@@ -199,6 +200,9 @@ input {
     opacity  :1;
     z-index : -1;
     transition : .3s ease-in-out;
+}
+#text {
+    color : lightblue;
 }
 #text:hover {
     color : black;

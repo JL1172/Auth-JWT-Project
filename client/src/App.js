@@ -6,6 +6,9 @@ import { useState } from 'react';
 import { loginUser, registerUser } from './axiosActions/axios-actions';
 import { GlobalProvider } from "../src/components/contexts/GlobalProvider"
 import { Alert } from '@mui/material';
+import Protected from "./components/Protected"; 
+import User from './components/User';
+import Logout from './components/Logout';
 
 const initialState = {
   user_username: "",
@@ -17,6 +20,7 @@ function App() {
   const [spinnerOn, setSpinnerOn] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [initial,setInitial] = useState("J"); 
 
   const nav = useNavigate();
 
@@ -33,10 +37,15 @@ function App() {
     setSpinnerOn(true);
     loginUser({ user_username: inputValues.user_username, user_password: inputValues.user_password })
       .then(res => {
-        window.localStorage.setItem("token",res.data.token);
+        window.localStorage.setItem("token",JSON.stringify(res.data.token));
+        const firstInitial = res.data.message.split(" ");
+        const third = firstInitial[2];
+        const thirds = third[0].toUpperCase();
+        setInitial(thirds)  
         setSuccessMessage(res.data.message);
         setSpinnerOn(false);
         setInputValues(initialState);
+        nav("/protected"); 
       }).catch(err => {
         setErrorMessage(err.response.data.message);
         setSpinnerOn(false);
@@ -66,9 +75,19 @@ function App() {
     setErrorMessage("");
   }
 
+  const logoutOfProfile = (e) => {
+    window.localStorage.clear();
+    setSuccessMessage("");
+    setErrorMessage("");
+    setInputValues(initialState);
+    setInitial("");
+    nav("/");
+  }
+
   return (
-    <GlobalProvider.Provider value={{ login, register, changeHandler, inputValues, spinnerOn }}>
+    <GlobalProvider.Provider value={{ login, register, changeHandler, inputValues, spinnerOn, initial, logoutOfProfile }}>
       <StyledApp>
+      {initial && <Logout/>}
         {errorMessage && <Alert style={{ zIndex: "3", position : "fixed", width : "100%" }} severity="error">{errorMessage}<span onClick={closeMessage} id ="close" className="material-symbols-outlined">
           close
         </span></Alert>}
@@ -78,6 +97,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/protected" element={<Protected />} />
+          <Route path = "/user/protected/auth/asdflkjasdI_jwJLIE4ivHJ" element = {<User />}/>
         </Routes>
       </StyledApp>
     </GlobalProvider.Provider>
