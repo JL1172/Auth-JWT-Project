@@ -9,6 +9,7 @@ import { Alert } from '@mui/material';
 import Protected from "./components/Protected"; 
 import User from './components/User';
 import Logout from './components/Logout';
+import Settings from './components/Settings';
 
 const initialState = {
   user_username: "",
@@ -88,7 +89,7 @@ function App() {
   return (
     <GlobalProvider.Provider value={{ login, register, changeHandler, inputValues, spinnerOn, initial, logoutOfProfile }}>
       <StyledApp>
-      {/* {initial && <Logout/>} */}
+      {<Logout/>}
         {errorMessage && <Alert style={{ zIndex: "3", position : "fixed", width : "100%" }} severity="error">{errorMessage}<span onClick={closeMessage} id ="close" className="material-symbols-outlined">
           close
         </span></Alert>}
@@ -100,6 +101,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/protected" element={<Protected />} />
           <Route path = "/user/protected/auth/asdflkjasdI_jwJLIE4ivHJ" element = {<User />}/>
+          <Route path = "/users/protected/auth/settings" element = {<Settings />} />
         </Routes>
       </StyledApp>
     </GlobalProvider.Provider>

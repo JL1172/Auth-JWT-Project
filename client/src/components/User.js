@@ -19,15 +19,9 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function User() {
     const { initial } = useContext(GlobalProvider);
  
-    useEffect(()=> {
-        accessUserList().then(res=> {
-            console.log(res)
-        }).catch(err=> console.error)
-    },[])
     return (
         <StyledUser>
-            {<Logout2 />}
-            
+           
         </StyledUser>
     )
 }
