@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Full Stack App with JWT Authentication
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+Welcome to our full-stack application! This project is a complete application that provides both a backend RESTful API and a stylish front-end user interface. The primary goal of this app is to enable user registration and login, granting them access to a personalized interface. Here are some key features and technologies used in this project:
 
-In the project directory, you can run:
+- **Authentication and Authorization:** We've implemented user authentication and authorization using JWT tokens and bcrypt for secure password hashing. This ensures that only authorized users can access specific parts of the application.
 
-### `npm start`
+- **Database Management:** We've chosen SQLite3 as our Database Management System (DBMS) to store and manage user data and application information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Middleware:** Throughout the project, we have incorporated middleware for input sanitization, error handling, and route protection on the server side. This ensures data security and robust functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Front-end Styling:** The front-end of the application is not just functional but also visually appealing. We've used technologies like styled-components, Material-UI, and Bootstrap to create an attractive and user-friendly interface.
 
-### `npm test`
+- **React Router:** We've employed React Router to handle client-side routing, allowing users to navigate the application seamlessly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+Here's an overview of the project structure:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **`/client`:** Contains the front-end part of the application built using React, styled-components, Material-UI, and Bootstrap.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`/server`:** Houses the back-end server and API. The server is responsible for user registration, authentication, and providing access to specific user interfaces.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **`/database`:** Contains the SQLite3 database and schema information.
